@@ -826,10 +826,10 @@ def spinYasim(tFid):
     # run yasim external process to generate LvsD data table saved dataset file
     vDatHndl = open(lvsdFid, 'w')
     if  ( sys.platform.startswith('linux')):
-      command_line = 'yasim {:s} --detail-lvsd -a {:.2f} -s {:.2f}' \
+      command_line = '/home/kaklik/FG-install/bin/yasim {:s} --detail-lvsd -a {:.2f} -s {:.2f}' \
                       .format(tFid,                 (Hy/3.3), (Vy))
     else:
-      command_line = 'yasim {:s} -g     -a {:.2f} -s {:.2f}' \
+      command_line = '/home/kaklik/FG-install/bin/yasim {:s} -g     -a {:.2f} -s {:.2f}' \
                       .format(tFid,                 (Hy/3.3), (Vy))
     #    print(command_line)
     args = shlex.split(command_line)
@@ -845,10 +845,10 @@ def spinYasim(tFid):
     vDatHndl = open(iasaFid, 'w')
 
     if  ( sys.platform.startswith('linux')):
-      command_line = 'yasim {:s} --detail-min-speed -a {:.2f}' \
+      command_line = '/home/kaklik/FG-install/bin/yasim {:s} --detail-min-speed -a {:.2f}' \
                       .format(tFid,                 (Hy/3.3))
     else:
-      command_line = 'yasim {:s} --min-speed -a {:.2f}' \
+      command_line = '/home/kaklik/FG-install/bin/yasim {:s} --min-speed -a {:.2f}' \
                       .format(tFid,                 (Hy/3.3))
     #    print(command_line)
     args = shlex.split(command_line)
@@ -865,9 +865,9 @@ def spinYasim(tFid):
       # run yasim external process to generate min IAS data table saved dataset file
       vDatHndl = open(iascFid, 'w')
       if  ( sys.platform.startswith('linux')):
-        command_line = 'yasim ' + tFid + ' --detail-min-speed -cruise '
+        command_line = '/home/kaklik/FG-install/bin/yasim ' + tFid + ' --detail-min-speed -cruise '
       else:
-        command_line = 'yasim ' + tFid + '        --min-speed -cruise '
+        command_line = '/home/kaklik/FG-install/bin/yasim ' + tFid + '        --min-speed -cruise '
       #    print(command_line)
       args = shlex.split(command_line)
       DEVNULL = open(os.devnull, 'wb')
@@ -881,9 +881,9 @@ def spinYasim(tFid):
       # run yasim external process to generate min IAS data table saved dataset file
       vDatHndl = open(drgaFid, 'w')
       if  ( sys.platform.startswith('linux')):
-        command_line = 'yasim ' + tFid + ' --detail-drag -approach '
+        command_line = '/home/kaklik/FG-install/bin/yasim ' + tFid + ' --detail-drag -approach '
       else:   
-        command_line = 'yasim ' + tFid + ' -d -approach '
+        command_line = '/home/kaklik/FG-install/bin/yasim ' + tFid + ' -d -approach '
       #    print(command_line)
       args = shlex.split(command_line)
       DEVNULL = open(os.devnull, 'wb')
@@ -897,7 +897,7 @@ def spinYasim(tFid):
   else :  
     # run yasim external process to generate LvsD data table saved dataset file
     vDatHndl = open(lvsdFid, 'w')
-    command_line = 'yasim ' + tFid + ' -g            -a '+ str(Hy/3.3) + ' -s ' + str(Vy)
+    command_line = '/home/kaklik/FG-install/bin/yasim ' + tFid + ' -g            -a '+ str(Hy/3.3) + ' -s ' + str(Vy)
     #    print(command_line)
     args = shlex.split(command_line)
     DEVNULL = open(os.devnull, 'wb')
@@ -910,7 +910,7 @@ def spinYasim(tFid):
     ##
     # run yasim external process to generate min IAS data table saved dataset file
     vDatHndl = open(iasaFid, 'w')
-    command_line = 'yasim ' + tFid + '        --min-speed -approach '
+    command_line = '/home/kaklik/FG-install/bin/yasim ' + tFid + '        --min-speed -approach '
     #    print(command_line)
     args = shlex.split(command_line)
     DEVNULL = open(os.devnull, 'wb')
@@ -925,7 +925,7 @@ def spinYasim(tFid):
     if (0) :
       # run yasim external process to generate min IAS data table saved dataset file
       vDatHndl = open(iascFid, 'w')
-      command_line = 'yasim ' + tFid + '        --min-speed -cruise '
+      command_line = '/home/kaklik/FG-install/bin/yasim ' + tFid + '        --min-speed -cruise '
       #    print(command_line)
       args = shlex.split(command_line)
       DEVNULL = open(os.devnull, 'wb')
@@ -938,7 +938,7 @@ def spinYasim(tFid):
       ##
       # run yasim external process to generate min IAS data table saved dataset file
       vDatHndl = open(drgaFid, 'w')
-      command_line = 'yasim ' + tFid + '         -drag -approach '
+      command_line = '/home/kaklik/FG-install/bin/yasim ' + tFid + '         -drag -approach '
       #    print(command_line)
       args = shlex.split(command_line)
       DEVNULL = open(os.devnull, 'wb')
@@ -951,7 +951,7 @@ def spinYasim(tFid):
       ##
   # run yasim external process to create console output of solution
   vDatHndl = open(solnFid, 'w')
-  command_line = 'yasim ' + tFid
+  command_line = '/home/kaklik/FG-install/bin/yasim ' + tFid
   #    print(command_line)
   args = shlex.split(command_line)
   DEVNULL = open(os.devnull, 'wb')
